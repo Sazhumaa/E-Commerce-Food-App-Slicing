@@ -28,6 +28,40 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
+class CategoryItem extends StatelessWidget {
+  final IconData icon;
+  final String title;
+
+  const CategoryItem({
+    super.key,
+    required this.icon,
+    required this.title,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 8),
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: Colors.orange[100],
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(icon, size: 30, color: Colors.orange[800]),
+          const SizedBox(height: 5),
+          Text(
+            title,
+            style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
@@ -130,10 +164,39 @@ class _HomePageState extends State<HomePage> {
                   fit: BoxFit.cover, // biar gambarnya ngepas
                 ),
               ),
-            )
+              
+            ),
+            SizedBox(height: 20),
+            
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Categories",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w400,
+                    fontSize: 20,
+                  ),
+                ),
+                Text("See All")
+              ],
+            ),
+
+            const SizedBox(height: 10),
+            SizedBox(
+              height: 90,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: const [
+                  CategoryItem(icon: Icons.cake, title: "Cup Cake"),
+                  CategoryItem(icon: Icons.cookie, title: "Cookies"),
+                  CategoryItem(icon: Icons.donut_small, title: "Donuts"),
+                  CategoryItem(icon: Icons.bakery_dining, title: "Breads "),
+                ],
+              ),
+            ),
 
           ]
-          
         ),
       ),
     );
