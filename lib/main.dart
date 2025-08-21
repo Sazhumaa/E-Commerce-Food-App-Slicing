@@ -69,7 +69,7 @@ class _HomePageState extends State<HomePage> {
         
 
         bottom: PreferredSize(
-          preferredSize: Size.fromHeight(60),
+          preferredSize: Size.fromHeight(70),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             child: Container(
@@ -90,8 +90,52 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
         ),
+      ),
 
-    ),
+
+      // Promo Woi
+
+      body: SingleChildScrollView(
+        padding: EdgeInsets.all(20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row (
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                "Promo Spesial",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w600
+                ),
+              ),
+              
+              Text(
+                "See All",
+                style: TextStyle(
+                  fontWeight: FontWeight.w400
+                ),
+              )
+            ],
+            ),
+            const SizedBox(height: 20),
+
+            Container(
+              height: 150,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                image: DecorationImage(
+                  image: AssetImage("assets/promo_sweet_dessert_banner.png"),
+                  fit: BoxFit.cover, // biar gambarnya ngepas
+                ),
+              ),
+            )
+
+          ]
+          
+        ),
+      ),
     );
   }
 }
