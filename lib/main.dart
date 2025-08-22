@@ -302,7 +302,37 @@ class _HomePageState extends State<HomePage> {
             ),
             SizedBox(height: 32),
 
-            
+            Text(
+              "Rekomendasi Produk",
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600              ),
+            ),
+            // Rekomendasi Prosduk
+            SizedBox(
+              height: 250, 
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: const [
+                  
+                  RekomendasiProduk(
+                    assetImage: "assets/baked-chocolate-doughnuts-59348-1.jpeg",
+                    title: "Chocolate Donut",
+                    rating: 4.8,
+                  ),
+                  RekomendasiProduk(
+                    assetImage: "assets/Carrot-Cake-Cupcakes-SQUARE.webp",
+                    title: "Cup Cake",
+                    rating: 4.7,
+                  ),
+                  RekomendasiProduk(
+                    assetImage: "assets/Carrot-Cake-Cupcakes-SQUARE.webp",
+                    title: "Cake",
+                    rating: 5.0,
+                  ),
+                ],
+              ),
+            )
 
           ]
         ),
