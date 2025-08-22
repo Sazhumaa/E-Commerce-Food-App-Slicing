@@ -332,11 +332,35 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ],
               ),
-            )
-
+            ),
           ]
         ),
       ),
+      bottomNavigationBar: BottomNavigationBar(
+  items: const [
+    // Homepage
+    BottomNavigationBarItem(
+      icon: Icon(Icons.home),
+      label: "Home",
+    ),
+
+    // Menu Page
+    BottomNavigationBarItem(
+      icon: Icon(Icons.menu_book),
+      label: "Menu",
+    ),
+
+    // Profile Page
+    BottomNavigationBarItem(
+      icon: Icon(Icons.person),
+      label: "Profile",
+    ),
+  ],
+),
+
+        //Homepage
+        
     );
+    
   }
 }
