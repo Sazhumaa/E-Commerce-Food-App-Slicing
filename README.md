@@ -15,8 +15,6 @@ Dibuat menggunakan **Flutter & Dart**, dengan arsitektur sederhana berbasis **St
 
 ---
 
----
-
 ## 🛠 Teknologi yang Digunakan
 - **Flutter 3.x**
 - **Dart**
