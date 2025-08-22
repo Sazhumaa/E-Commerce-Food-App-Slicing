@@ -62,6 +62,109 @@ class CategoryItem extends StatelessWidget {
   }
 }
 
+class RekomendasiProdukList extends StatelessWidget {
+  const RekomendasiProdukList({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 250,
+      child: ListView(
+        scrollDirection: Axis.horizontal,
+        children: const [
+          RekomendasiProduk(
+            assetImage: "assets/baked-chocolate-doughnuts-59348-1.jpeg",
+            title: "Chocolate Donut",
+            rating: 4.8,
+          ),
+          RekomendasiProduk(
+            assetImage: "assets/Carrot-Cake-Cupcakes-SQUARE.webp",
+            title: "Chocolate Cup Cake",
+            rating: 4.7,
+          ),
+          RekomendasiProduk(
+            assetImage: "assets/choco-cake.jpg",
+            title: "Chocolate Cake",
+            rating: 4.9,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class RekomendasiProduk extends StatelessWidget {
+  final String assetImage;
+  final String title;
+  final double rating;
+
+  const RekomendasiProduk({
+    super.key,
+    required this.assetImage,
+    required this.title,
+    required this.rating,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 160,
+      margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(20),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.2),
+            blurRadius: 6,
+            offset: const Offset(0, 3),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          ClipRRect(
+            borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
+            child: Image.asset(
+              assetImage,
+              height: 120,
+              width: double.infinity,
+              fit: BoxFit.cover,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 14,
+                  ),
+                ),
+                const SizedBox(height: 5),
+                Row(
+                  children: [
+                    const Icon(Icons.star, color: Colors.amber, size: 16),
+                    const SizedBox(width: 4),
+                    Text(rating.toString()),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+
+
+
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
@@ -168,13 +271,15 @@ class _HomePageState extends State<HomePage> {
             ),
             SizedBox(height: 20),
             
+
+            //Kategori
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "Categories",
+                  "Kategori",
                   style: TextStyle(
-                    fontWeight: FontWeight.w400,
+                    fontWeight: FontWeight.w600,
                     fontSize: 20,
                   ),
                 ),
@@ -195,6 +300,9 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
+            SizedBox(height: 32),
+
+            
 
           ]
         ),
@@ -202,31 +310,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
-// appBar: AppBar(
-//           backgroundColor: Colors.blue[400],
-//           centerTitle: true,
-//           title: Text(
-//             "AbsurdApp",
-//             style: TextStyle(
-//               fontSize: 20,
-//               fontWeight: FontWeight.w600
-//             ),
-//           ),
-
-//           leading: Icon(Icons.menu),
-//           actions: [
-//             Padding(
-//               padding: EdgeInsets.all(10),
-//               child: Row(
-//                 children: [
-                  
-//                   Icon(Icons.notifications, color: Colors.white,),
-//                   SizedBox(width: 10),
-//                   Icon(Icons.shopping_cart, color: Colors.white),
-//                 ],
-//               ),
-
-//             )
-//           ],
-//         ),
