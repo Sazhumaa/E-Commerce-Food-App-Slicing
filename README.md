@@ -53,10 +53,3 @@ Email: sazhumaakun@gmail.com
 GitHub: @Sazhumaa
 
 
-
-
-
-
-
-
-Ask ChatGPT
